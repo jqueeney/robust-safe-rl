@@ -1,2 +1,2 @@
-# robust-safe-rl
-Robust and safe deep reinforcement learning algorithms
+# Robust and Safe Deep Reinforcement Learning Algorithms
+Coming soon!
