@@ -1,0 +1,38 @@
+name: robust_safe_rl
+channels:
+  - conda-forge
+  - nvidia
+  - defaults 
+dependencies:
+  - cudatoolkit>=11.1
+  - cudnn
+  - nccl
+  - matplotlib
+  - numpy
+  - pip
+  - python>=3.8.5,<3.9
+  - scipy
+  - seaborn
+  - tensorflow-gpu
+  - lockfile
+  - absl-py
+  - dm-env
+  - dm-tree
+  - future
+  - glfw
+  - h5py
+  - lxml
+  - mock
+  - nose
+  - pillow
+  - protobuf
+  - pyopengl
+  - pyparsing
+  - requests
+  - setuptools!=50.0.0
+  - tqdm
+  - jupyter=1.0.0
+  - gym-all
+  - pip:
+    - dm-control
+    - "--editable=git+https://github.com/google-research/realworldrl_suite.git#egg=realworldrl_suite"
