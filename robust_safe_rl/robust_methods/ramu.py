@@ -48,11 +48,11 @@ class RAMU(RobustNet):
 
         rtg_weights = self.get_distortion_probs(rtg_next_all,weights=True,
             attitude=self.rob_reward_attitude)
-        rtg_next_all = rtg_next_all * rtg_weights
+        rtg_next_all = tf.sort(rtg_next_all,axis=0) * rtg_weights
         
         if self.safe:
             ctg_weights = self.get_distortion_probs(ctg_next_all,weights=True)    
-            ctg_next_all = ctg_next_all * ctg_weights
+            ctg_next_all = tf.sort(ctg_next_all,axis=0) * ctg_weights
         
         rtg_next_values = tf.reduce_mean(rtg_next_all,axis=0)
         ctg_next_values = tf.reduce_mean(ctg_next_all,axis=0)
@@ -96,15 +96,14 @@ class RAMU(RobustNet):
             neutral = True
         else:
             neutral = False
-        
-        if attitude == 'optimistic':
-            values = values * -1
 
         num_samples = len(values)
         quantile_probs = self._get_quantile_probs(num_samples,neutral)
 
-        sort_idx = np.argsort(values,axis=0)
-        distortion_probs = quantile_probs[sort_idx]
+        if attitude == 'optimistic':
+            quantile_probs = quantile_probs[::-1]
+        
+        distortion_probs = np.expand_dims(quantile_probs, axis=-1)
 
         if weights:
             return distortion_probs * num_samples
