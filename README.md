@@ -2,28 +2,29 @@
 
 This repository contains the official implementations for the following papers on robust and safe deep reinforcement learning (RL):
 
-- [Risk-Averse Model Uncertainty for Distributionally Robust Safe Reinforcement Learning](https://arxiv.org/abs/2301.12593)
-- [Optimal Transport Perturbations for Safe Reinforcement Learning with Robustness Guarantees](https://arxiv.org/abs/2301.13375)
+- [Risk-Averse Model Uncertainty for Distributionally Robust Safe Reinforcement Learning](https://proceedings.neurips.cc/paper_files/paper/2023/file/05b63fa06784b71aab3939004e0f0a0d-Paper-Conference.pdf) (NeurIPS 2023)
+- [Optimal Transport Perturbations for Safe Reinforcement Learning with Robustness Guarantees](https://openreview.net/pdf?id=cgSXpAR4Gl) (TMLR 2024)
 
 Risk-Averse Model Uncertainty (RAMU) and Optimal Transport Perturbations (OTP) both provide robustness to environment uncertainty in safe RL, while only requiring data collected under a nominal training environment. RAMU considers a distribution over potential transition models, while OTP considers an uncertainty set of potential transition models defined using optimal transport cost.
 
 Please consider citing our papers as follows:
 
-```
-@misc{queeney_2023_ramu,
+```bibtex
+@inproceedings{queeney_2023_ramu,
  author = {James Queeney and Mouhacine Benosman},
  title = {Risk-Averse Model Uncertainty for Distributionally Robust Safe Reinforcement Learning},
- year = {2023},
- howpublished={arXiv preprint},
- note={{arXiv:2301.12593}},
+ booktitle = {Advances in Neural Information Processing Systems},
+ publisher = {Curran Associates, Inc.},
+ volume = {36},
+ year = {2023}
 }
 
-@misc{queeney_2023_otp,
+@article{queeney_2024_otp,
  author = {James Queeney and Erhan Can Ozcan and Ioannis Ch. Paschalidis and Christos G. Cassandras},
  title = {Optimal Transport Perturbations for Safe Reinforcement Learning with Robustness Guarantees},
- year = {2023},
- howpublished={arXiv preprint},
- note={{arXiv:2301.13375}},
+ journal = {Transactions on Machine Learning Research},
+ issn = {2835-8856},
+ year = {2024}
 }
 ```
 
